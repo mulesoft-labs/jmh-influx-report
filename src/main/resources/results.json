@@ -1,0 +1,1358 @@
+[
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.canonicalAstPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "array"
+        },
+        "primaryMetric" : {
+            "score" : 5.00624137E8,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5.00624137E8,
+                "50.0" : 5.00624137E8,
+                "90.0" : 5.00624137E8,
+                "95.0" : 5.00624137E8,
+                "99.0" : 5.00624137E8,
+                "99.9" : 5.00624137E8,
+                "99.99" : 5.00624137E8,
+                "99.999" : 5.00624137E8,
+                "99.9999" : 5.00624137E8,
+                "100.0" : 5.00624137E8
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    5.00624137E8
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.canonicalAstPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "function-call"
+        },
+        "primaryMetric" : {
+            "score" : 7.625578755E8,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7.625578755E8,
+                "50.0" : 7.625578755E8,
+                "90.0" : 7.625578755E8,
+                "95.0" : 7.625578755E8,
+                "99.0" : 7.625578755E8,
+                "99.9" : 7.625578755E8,
+                "99.99" : 7.625578755E8,
+                "99.999" : 7.625578755E8,
+                "99.9999" : 7.625578755E8,
+                "100.0" : 7.625578755E8
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    7.625578755E8
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.canonicalAstPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "match"
+        },
+        "primaryMetric" : {
+            "score" : 8.35539135E8,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8.35539135E8,
+                "50.0" : 8.35539135E8,
+                "90.0" : 8.35539135E8,
+                "95.0" : 8.35539135E8,
+                "99.0" : 8.35539135E8,
+                "99.9" : 8.35539135E8,
+                "99.99" : 8.35539135E8,
+                "99.999" : 8.35539135E8,
+                "99.9999" : 8.35539135E8,
+                "100.0" : 8.35539135E8
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    8.35539135E8
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.parsingPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "array"
+        },
+        "primaryMetric" : {
+            "score" : 1.1053696626373626E7,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.1053696626373626E7,
+                "50.0" : 1.1053696626373626E7,
+                "90.0" : 1.1053696626373626E7,
+                "95.0" : 1.1053696626373626E7,
+                "99.0" : 1.1053696626373626E7,
+                "99.9" : 1.1053696626373626E7,
+                "99.99" : 1.1053696626373626E7,
+                "99.999" : 1.1053696626373626E7,
+                "99.9999" : 1.1053696626373626E7,
+                "100.0" : 1.1053696626373626E7
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1.1053696626373626E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.parsingPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "function-call"
+        },
+        "primaryMetric" : {
+            "score" : 1.0357060448979592E7,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.0357060448979592E7,
+                "50.0" : 1.0357060448979592E7,
+                "90.0" : 1.0357060448979592E7,
+                "95.0" : 1.0357060448979592E7,
+                "99.0" : 1.0357060448979592E7,
+                "99.9" : 1.0357060448979592E7,
+                "99.99" : 1.0357060448979592E7,
+                "99.999" : 1.0357060448979592E7,
+                "99.9999" : 1.0357060448979592E7,
+                "100.0" : 1.0357060448979592E7
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1.0357060448979592E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.parsingPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "match"
+        },
+        "primaryMetric" : {
+            "score" : 5873853.947368421,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5873853.947368421,
+                "50.0" : 5873853.947368421,
+                "90.0" : 5873853.947368421,
+                "95.0" : 5873853.947368421,
+                "99.0" : 5873853.947368421,
+                "99.9" : 5873853.947368421,
+                "99.99" : 5873853.947368421,
+                "99.999" : 5873853.947368421,
+                "99.9999" : 5873853.947368421,
+                "100.0" : 5873853.947368421
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    5873853.947368421
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.scopePhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "array"
+        },
+        "primaryMetric" : {
+            "score" : 5.69390121E8,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5.69390121E8,
+                "50.0" : 5.69390121E8,
+                "90.0" : 5.69390121E8,
+                "95.0" : 5.69390121E8,
+                "99.0" : 5.69390121E8,
+                "99.9" : 5.69390121E8,
+                "99.99" : 5.69390121E8,
+                "99.999" : 5.69390121E8,
+                "99.9999" : 5.69390121E8,
+                "100.0" : 5.69390121E8
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    5.69390121E8
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.scopePhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "function-call"
+        },
+        "primaryMetric" : {
+            "score" : 1.433863405E9,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.433863405E9,
+                "50.0" : 1.433863405E9,
+                "90.0" : 1.433863405E9,
+                "95.0" : 1.433863405E9,
+                "99.0" : 1.433863405E9,
+                "99.9" : 1.433863405E9,
+                "99.99" : 1.433863405E9,
+                "99.999" : 1.433863405E9,
+                "99.9999" : 1.433863405E9,
+                "100.0" : 1.433863405E9
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1.433863405E9
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.scopePhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "match"
+        },
+        "primaryMetric" : {
+            "score" : 1.832047962E9,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.832047962E9,
+                "50.0" : 1.832047962E9,
+                "90.0" : 1.832047962E9,
+                "95.0" : 1.832047962E9,
+                "99.0" : 1.832047962E9,
+                "99.9" : 1.832047962E9,
+                "99.99" : 1.832047962E9,
+                "99.999" : 1.832047962E9,
+                "99.9999" : 1.832047962E9,
+                "100.0" : 1.832047962E9
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1.832047962E9
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.typeCheckPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "array"
+        },
+        "primaryMetric" : {
+            "score" : 1.172256307E9,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.172256307E9,
+                "50.0" : 1.172256307E9,
+                "90.0" : 1.172256307E9,
+                "95.0" : 1.172256307E9,
+                "99.0" : 1.172256307E9,
+                "99.9" : 1.172256307E9,
+                "99.99" : 1.172256307E9,
+                "99.999" : 1.172256307E9,
+                "99.9999" : 1.172256307E9,
+                "100.0" : 1.172256307E9
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1.172256307E9
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.typeCheckPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "function-call"
+        },
+        "primaryMetric" : {
+            "score" : 1.10597195E9,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.10597195E9,
+                "50.0" : 1.10597195E9,
+                "90.0" : 1.10597195E9,
+                "95.0" : 1.10597195E9,
+                "99.0" : 1.10597195E9,
+                "99.9" : 1.10597195E9,
+                "99.99" : 1.10597195E9,
+                "99.999" : 1.10597195E9,
+                "99.9999" : 1.10597195E9,
+                "100.0" : 1.10597195E9
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1.10597195E9
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.parser.MappingParserBenchmarkTest.typeCheckPhase",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "path" : "match"
+        },
+        "primaryMetric" : {
+            "score" : 9.205348675E8,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 9.205348675E8,
+                "50.0" : 9.205348675E8,
+                "90.0" : 9.205348675E8,
+                "95.0" : 9.205348675E8,
+                "99.0" : 9.205348675E8,
+                "99.9" : 9.205348675E8,
+                "99.99" : 9.205348675E8,
+                "99.999" : 9.205348675E8,
+                "99.9999" : 9.205348675E8,
+                "100.0" : 9.205348675E8
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    9.205348675E8
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.FunctionCallBenchmarkTest.fibo5",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 216292.49282700423,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 216292.49282700423,
+                "50.0" : 216292.49282700423,
+                "90.0" : 216292.49282700423,
+                "95.0" : 216292.49282700423,
+                "99.0" : 216292.49282700423,
+                "99.9" : 216292.49282700423,
+                "99.99" : 216292.49282700423,
+                "99.999" : 216292.49282700423,
+                "99.9999" : 216292.49282700423,
+                "100.0" : 216292.49282700423
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    216292.49282700423
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.FunctionCallBenchmarkTest.strAppendDW",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 112688.77430857143,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 112688.77430857143,
+                "50.0" : 112688.77430857143,
+                "90.0" : 112688.77430857143,
+                "95.0" : 112688.77430857143,
+                "99.0" : 112688.77430857143,
+                "99.9" : 112688.77430857143,
+                "99.99" : 112688.77430857143,
+                "99.999" : 112688.77430857143,
+                "99.9999" : 112688.77430857143,
+                "100.0" : 112688.77430857143
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    112688.77430857143
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.FunctionCallBenchmarkTest.strAppendJava",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 64678.29188210962,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 64678.29188210962,
+                "50.0" : 64678.29188210962,
+                "90.0" : 64678.29188210962,
+                "95.0" : 64678.29188210962,
+                "99.0" : 64678.29188210962,
+                "99.9" : 64678.29188210962,
+                "99.99" : 64678.29188210962,
+                "99.999" : 64678.29188210962,
+                "99.9999" : 64678.29188210962,
+                "100.0" : 64678.29188210962
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    64678.29188210962
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.csv",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "10"
+        },
+        "primaryMetric" : {
+            "score" : 234615.05395261553,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 234615.05395261553,
+                "50.0" : 234615.05395261553,
+                "90.0" : 234615.05395261553,
+                "95.0" : 234615.05395261553,
+                "99.0" : 234615.05395261553,
+                "99.9" : 234615.05395261553,
+                "99.99" : 234615.05395261553,
+                "99.999" : 234615.05395261553,
+                "99.9999" : 234615.05395261553,
+                "100.0" : 234615.05395261553
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    234615.05395261553
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.csv",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "20"
+        },
+        "primaryMetric" : {
+            "score" : 369439.9896678967,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 369439.9896678967,
+                "50.0" : 369439.9896678967,
+                "90.0" : 369439.9896678967,
+                "95.0" : 369439.9896678967,
+                "99.0" : 369439.9896678967,
+                "99.9" : 369439.9896678967,
+                "99.99" : 369439.9896678967,
+                "99.999" : 369439.9896678967,
+                "99.9999" : 369439.9896678967,
+                "100.0" : 369439.9896678967
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    369439.9896678967
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.csv",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "40"
+        },
+        "primaryMetric" : {
+            "score" : 795060.2193958665,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 795060.2193958665,
+                "50.0" : 795060.2193958665,
+                "90.0" : 795060.2193958665,
+                "95.0" : 795060.2193958665,
+                "99.0" : 795060.2193958665,
+                "99.9" : 795060.2193958665,
+                "99.99" : 795060.2193958665,
+                "99.999" : 795060.2193958665,
+                "99.9999" : 795060.2193958665,
+                "100.0" : 795060.2193958665
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    795060.2193958665
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.csv",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "100"
+        },
+        "primaryMetric" : {
+            "score" : 1988746.1749502982,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1988746.1749502982,
+                "50.0" : 1988746.1749502982,
+                "90.0" : 1988746.1749502982,
+                "95.0" : 1988746.1749502982,
+                "99.0" : 1988746.1749502982,
+                "99.9" : 1988746.1749502982,
+                "99.99" : 1988746.1749502982,
+                "99.999" : 1988746.1749502982,
+                "99.9999" : 1988746.1749502982,
+                "100.0" : 1988746.1749502982
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1988746.1749502982
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.json",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "10"
+        },
+        "primaryMetric" : {
+            "score" : 239830.6180771997,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 239830.6180771997,
+                "50.0" : 239830.6180771997,
+                "90.0" : 239830.6180771997,
+                "95.0" : 239830.6180771997,
+                "99.0" : 239830.6180771997,
+                "99.9" : 239830.6180771997,
+                "99.99" : 239830.6180771997,
+                "99.999" : 239830.6180771997,
+                "99.9999" : 239830.6180771997,
+                "100.0" : 239830.6180771997
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    239830.6180771997
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.json",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "20"
+        },
+        "primaryMetric" : {
+            "score" : 413545.1566763125,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 413545.1566763125,
+                "50.0" : 413545.1566763125,
+                "90.0" : 413545.1566763125,
+                "95.0" : 413545.1566763125,
+                "99.0" : 413545.1566763125,
+                "99.9" : 413545.1566763125,
+                "99.99" : 413545.1566763125,
+                "99.999" : 413545.1566763125,
+                "99.9999" : 413545.1566763125,
+                "100.0" : 413545.1566763125
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    413545.1566763125
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.json",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "40"
+        },
+        "primaryMetric" : {
+            "score" : 799405.6182108626,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 799405.6182108626,
+                "50.0" : 799405.6182108626,
+                "90.0" : 799405.6182108626,
+                "95.0" : 799405.6182108626,
+                "99.0" : 799405.6182108626,
+                "99.9" : 799405.6182108626,
+                "99.99" : 799405.6182108626,
+                "99.999" : 799405.6182108626,
+                "99.9999" : 799405.6182108626,
+                "100.0" : 799405.6182108626
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    799405.6182108626
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.json",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "100"
+        },
+        "primaryMetric" : {
+            "score" : 2171060.1496746205,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2171060.1496746205,
+                "50.0" : 2171060.1496746205,
+                "90.0" : 2171060.1496746205,
+                "95.0" : 2171060.1496746205,
+                "99.0" : 2171060.1496746205,
+                "99.9" : 2171060.1496746205,
+                "99.99" : 2171060.1496746205,
+                "99.999" : 2171060.1496746205,
+                "99.9999" : 2171060.1496746205,
+                "100.0" : 2171060.1496746205
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    2171060.1496746205
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.weave",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "10"
+        },
+        "primaryMetric" : {
+            "score" : 85540.2861175263,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 85540.2861175263,
+                "50.0" : 85540.2861175263,
+                "90.0" : 85540.2861175263,
+                "95.0" : 85540.2861175263,
+                "99.0" : 85540.2861175263,
+                "99.9" : 85540.2861175263,
+                "99.99" : 85540.2861175263,
+                "99.999" : 85540.2861175263,
+                "99.9999" : 85540.2861175263,
+                "100.0" : 85540.2861175263
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    85540.2861175263
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.weave",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "20"
+        },
+        "primaryMetric" : {
+            "score" : 171744.22767857142,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 171744.22767857142,
+                "50.0" : 171744.22767857142,
+                "90.0" : 171744.22767857142,
+                "95.0" : 171744.22767857142,
+                "99.0" : 171744.22767857142,
+                "99.9" : 171744.22767857142,
+                "99.99" : 171744.22767857142,
+                "99.999" : 171744.22767857142,
+                "99.9999" : 171744.22767857142,
+                "100.0" : 171744.22767857142
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    171744.22767857142
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.weave",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "40"
+        },
+        "primaryMetric" : {
+            "score" : 321477.6277278562,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 321477.6277278562,
+                "50.0" : 321477.6277278562,
+                "90.0" : 321477.6277278562,
+                "95.0" : 321477.6277278562,
+                "99.0" : 321477.6277278562,
+                "99.9" : 321477.6277278562,
+                "99.99" : 321477.6277278562,
+                "99.999" : 321477.6277278562,
+                "99.9999" : 321477.6277278562,
+                "100.0" : 321477.6277278562
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    321477.6277278562
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.weave",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "100"
+        },
+        "primaryMetric" : {
+            "score" : 1100000.1615384615,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1100000.1615384615,
+                "50.0" : 1100000.1615384615,
+                "90.0" : 1100000.1615384615,
+                "95.0" : 1100000.1615384615,
+                "99.0" : 1100000.1615384615,
+                "99.9" : 1100000.1615384615,
+                "99.99" : 1100000.1615384615,
+                "99.999" : 1100000.1615384615,
+                "99.9999" : 1100000.1615384615,
+                "100.0" : 1100000.1615384615
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1100000.1615384615
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.xml",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "10"
+        },
+        "primaryMetric" : {
+            "score" : 117665.53435294118,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 117665.53435294118,
+                "50.0" : 117665.53435294118,
+                "90.0" : 117665.53435294118,
+                "95.0" : 117665.53435294118,
+                "99.0" : 117665.53435294118,
+                "99.9" : 117665.53435294118,
+                "99.99" : 117665.53435294118,
+                "99.999" : 117665.53435294118,
+                "99.9999" : 117665.53435294118,
+                "100.0" : 117665.53435294118
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    117665.53435294118
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.xml",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "20"
+        },
+        "primaryMetric" : {
+            "score" : 240670.82050048123,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 240670.82050048123,
+                "50.0" : 240670.82050048123,
+                "90.0" : 240670.82050048123,
+                "95.0" : 240670.82050048123,
+                "99.0" : 240670.82050048123,
+                "99.9" : 240670.82050048123,
+                "99.99" : 240670.82050048123,
+                "99.999" : 240670.82050048123,
+                "99.9999" : 240670.82050048123,
+                "100.0" : 240670.82050048123
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    240670.82050048123
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.xml",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "40"
+        },
+        "primaryMetric" : {
+            "score" : 433328.5957538995,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 433328.5957538995,
+                "50.0" : 433328.5957538995,
+                "90.0" : 433328.5957538995,
+                "95.0" : 433328.5957538995,
+                "99.0" : 433328.5957538995,
+                "99.9" : 433328.5957538995,
+                "99.99" : 433328.5957538995,
+                "99.999" : 433328.5957538995,
+                "99.9999" : 433328.5957538995,
+                "100.0" : 433328.5957538995
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    433328.5957538995
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.mulesoft.weave.benchmark.runtime.ValueSelectorBenchmarkTest.xml",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "amount" : "100"
+        },
+        "primaryMetric" : {
+            "score" : 1079499.1402373246,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1079499.1402373246,
+                "50.0" : 1079499.1402373246,
+                "90.0" : 1079499.1402373246,
+                "95.0" : 1079499.1402373246,
+                "99.0" : 1079499.1402373246,
+                "99.9" : 1079499.1402373246,
+                "99.99" : 1079499.1402373246,
+                "99.999" : 1079499.1402373246,
+                "99.9999" : 1079499.1402373246,
+                "100.0" : 1079499.1402373246
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1079499.1402373246
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+
