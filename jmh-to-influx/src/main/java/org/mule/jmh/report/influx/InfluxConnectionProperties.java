@@ -8,7 +8,7 @@ public class InfluxConnectionProperties {
   private String password;
 
   public InfluxConnectionProperties() {
-    this("http://172.17.0.2:8086", null, null);
+    this("http://localhost:8086", null, null);
   }
 
   public InfluxConnectionProperties(String url, String userName, String password) {
