@@ -7,7 +7,7 @@ class InfluxReportExtension {
     String dbName;
     String dbUrl = "http://localhost:8086";
     String dbUserName;
-    String dbUserPassowrd;
+    String dbUserPassword;
 
 
     @Override
@@ -17,7 +17,7 @@ class InfluxReportExtension {
                 ", dbName='" + dbName + '\'' +
                 ", host='" + host + '\'' +
                 ", dbUserName='" + dbUserName + '\'' +
-                ", dbUserPassowrd='" + dbUserPassowrd + '\'' +
+                ", dbUserPassword='" + dbUserPassword + '\'' +
                 '}';
     }
 }

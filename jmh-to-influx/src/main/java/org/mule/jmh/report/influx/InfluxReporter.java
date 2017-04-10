@@ -6,6 +6,7 @@ import com.mulesoft.weave.module.reader.Reader;
 import com.mulesoft.weave.module.reader.SourceProvider$;
 import com.mulesoft.weave.module.reader.SourceReader$;
 import com.mulesoft.weave.parser.ast.variables.NameIdentifier;
+import com.mulesoft.weave.parser.exception.LocatableException;
 import com.mulesoft.weave.parser.phase.PhaseResult;
 import com.mulesoft.weave.runtime.CompilationResult;
 import com.mulesoft.weave.runtime.ExecutableWeave;
@@ -20,8 +21,12 @@ import org.influxdb.dto.Point;
 import scala.Tuple2;
 import scala.collection.immutable.Map;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
@@ -58,27 +63,44 @@ public class InfluxReporter {
     final ExecutableWeave executable = compile.getResult().executable();
     final Reader jsonReader = new JsonReader(SourceReader$.MODULE$.apply(SourceProvider$.MODULE$.apply(new File(jsonReport), Charset.forName("UTF-8"))));
     final Map<String, Reader> payload = executable.write$default$2().$plus(Tuple2.apply("in0", jsonReader));
-    final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), executable.write$default$4());
-    final List<JMHResult> results = (List<JMHResult>) result._1();
-    for (JMHResult jmhResult : results) {
-      Point.Builder builder = Point.measurement(jmhResult.getName())
-              .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS);
-      Set<java.util.Map.Entry<String, Object>> fields = jmhResult.getMeassures().entrySet();
-      for (java.util.Map.Entry<String, Object> field : fields) {
-        if (field.getValue() instanceof Double) {
-          builder.addField(field.getKey(), (Double) field.getValue());
-        } else if (field.getValue() instanceof Integer) {
-          builder.addField(field.getKey(), (Integer) field.getValue());
-        } else if (field.getValue() instanceof Boolean) {
-          builder.addField(field.getKey(), (Boolean) field.getValue());
-        } else {
-          builder.addField(field.getKey(), field.getValue().toString());
+    try {
+      String gitHash = calculateGitHash();
+      final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), executable.write$default$4());
+      final List<JMHResult> results = (List<JMHResult>) result._1();
+      for (JMHResult jmhResult : results) {
+        Point.Builder builder = Point.measurement(jmhResult.getName())
+                .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+        Set<java.util.Map.Entry<String, Object>> fields = jmhResult.getMeassures().entrySet();
+        for (java.util.Map.Entry<String, Object> field : fields) {
+          if (field.getValue() instanceof Double) {
+            builder.addField(field.getKey(), (Double) field.getValue());
+          } else if (field.getValue() instanceof Integer) {
+            //We always use double
+            builder.addField(field.getKey(), ((Integer) field.getValue()).doubleValue());
+          } else if (field.getValue() instanceof Boolean) {
+            builder.addField(field.getKey(), (Boolean) field.getValue());
+          } else {
+            builder.addField(field.getKey(), field.getValue().toString());
+          }
         }
+        builder.addField("git", gitHash);
+        batchPoints.point(builder.build());
       }
-      batchPoints.point(builder.build());
-    }
 
-    influxDB.write(batchPoints);
+      influxDB.write(batchPoints);
+    } catch (Exception e) {
+      if (e instanceof LocatableException) {
+        System.err.println(((LocatableException) e).formatErrorLine());
+      }
+      throw new RuntimeException(e);
+    }
+  }
+
+  private String calculateGitHash() throws IOException, InterruptedException {
+    Process exec = Runtime.getRuntime().exec("git rev-parse HEAD");
+    exec.waitFor();
+    InputStream output = exec.getInputStream();
+    return new BufferedReader(new InputStreamReader(output)).readLine();
   }
 
   public static void main(String[] args) throws FileNotFoundException {

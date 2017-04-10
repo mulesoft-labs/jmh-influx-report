@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 public class SimpleTest {
 
   public static final String INFLUX_URL = "http://localhost:8086";
-  public static final String REPORT_PATH = "/home/machaval/labs/repos/jmh-influx-reports/src/main/resources/results.json";
+  public static final String REPORT_PATH = "/home/machaval/labs/repos/jmh-influx-reports/jmh-to-influx/src/main/resources/results.json";
   public static final String DB_NAME = "dw-benchmark-test";
 
   public static void main(String[] args) throws FileNotFoundException {
