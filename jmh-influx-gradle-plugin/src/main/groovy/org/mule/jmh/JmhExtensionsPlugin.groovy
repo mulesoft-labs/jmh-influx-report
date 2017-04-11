@@ -12,7 +12,7 @@ class JmhExtensionsPlugin implements Plugin<Project> {
             InfluxReportExtension configuration = project.influxReport
             configuration.dbName = configuration.dbName ?: project.name + "_db"
             project.logger.info 'Using this configuration:\n{}', configuration
-            new InfluxReporter().createReport(configuration.reportPath, configuration.dbName, new InfluxConnectionProperties(configuration.dbUrl, configuration.dbUserName, configuration.dbUserPassword))
+            new InfluxReporter().createReport(project.buildDir.absolutePath + "/" + configuration.reportPath, configuration.dbName, new InfluxConnectionProperties(configuration.dbUrl, configuration.dbUserName, configuration.dbUserPassword))
         }
         task.group = "jmh"
         task.description = "Parse the json result and inserts it inside an influx db."

@@ -3,7 +3,7 @@ package org.mule.jmh
 
 class InfluxReportExtension {
 
-    String reportPath = "build/reports/jmh/results.json";
+    String reportPath = "reports/jmh/results.json";
     String dbName;
     String dbUrl = "http://localhost:8086";
     String dbUserName;
