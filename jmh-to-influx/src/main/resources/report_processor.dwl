@@ -3,8 +3,9 @@
 %output application/java
 ---
 in0 map (result) -> {
-  name: (result.benchmark splitBy ".")[-2 to -1] joinBy "_" ,
+  name: (result.benchmark splitBy ".")[-2],
   meassures: {
+        testName: (result.benchmark splitBy ".")[-1],
         (result.mode) : result.primaryMetric.score,
         unit: result.primaryMetric.scoreUnit,
         error : result.primaryMetric.scoreError,

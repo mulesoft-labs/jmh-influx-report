@@ -58,7 +58,7 @@ public class InfluxReporter {
             .consistency(InfluxDB.ConsistencyLevel.ALL)
             .build();
 
-    final WeaveResource weaveFile = WeaveResourceFactory.fromUrl(getClass().getClassLoader().getResource("report_processor.wev"));
+    final WeaveResource weaveFile = WeaveResourceFactory.fromUrl(getClass().getClassLoader().getResource("report_processor.dwl"));
     final PhaseResult<CompilationResult> compile = WeaveCompiler.compile(weaveFile, NameIdentifier.anonymous(), ParsingContextFactory.createMappingParsingContext());
     final ExecutableWeave executable = compile.getResult().executable();
     final Reader jsonReader = new JsonReader(SourceReader$.MODULE$.apply(SourceProvider$.MODULE$.apply(new File(jsonReport), Charset.forName("UTF-8"))));
@@ -68,8 +68,7 @@ public class InfluxReporter {
       final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), executable.write$default$4());
       final List<JMHResult> results = (List<JMHResult>) result._1();
       for (JMHResult jmhResult : results) {
-        Point.Builder builder = Point.measurement(jmhResult.getName())
-                .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+        Point.Builder builder = Point.measurement(jmhResult.getName()).time(System.currentTimeMillis(), TimeUnit.MILLISECONDS);
         Set<java.util.Map.Entry<String, Object>> fields = jmhResult.getMeassures().entrySet();
         for (java.util.Map.Entry<String, Object> field : fields) {
           if (field.getValue() instanceof Double) {
@@ -85,6 +84,8 @@ public class InfluxReporter {
         }
         builder.addField("git", gitHash);
         batchPoints.point(builder.build());
+        //To avoid two influx entries with same time
+        Thread.sleep(2);
       }
 
       influxDB.write(batchPoints);
