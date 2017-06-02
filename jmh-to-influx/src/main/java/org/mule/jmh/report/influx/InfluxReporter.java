@@ -65,6 +65,7 @@ public class InfluxReporter {
     final Map<String, Reader> payload = executable.write$default$2().$plus(Tuple2.apply("in0", jsonReader));
     try {
       String gitHash = calculateGitHash();
+      String commitMessage = calculateGitCommitMessage();
       final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), executable.write$default$4());
       final List<JMHResult> results = (List<JMHResult>) result._1();
       for (JMHResult jmhResult : results) {
@@ -83,6 +84,7 @@ public class InfluxReporter {
           }
         }
         builder.addField("git", gitHash);
+        builder.addField("commit.msg", commitMessage);
         batchPoints.point(builder.build());
         //To avoid two influx entries with same time
         Thread.sleep(2);
@@ -97,11 +99,34 @@ public class InfluxReporter {
     }
   }
 
-  private String calculateGitHash() throws IOException, InterruptedException {
-    Process exec = Runtime.getRuntime().exec("git rev-parse HEAD");
+  /**
+   * Read until the end of the stream.
+   */
+  private String readLines(BufferedReader reader) throws IOException, InterruptedException  {
+    // buffer for storing file contents in memory
+    StringBuilder stringBuffer = new StringBuilder("");
+    String line;
+    while ((line = reader.readLine()) != null) {
+      // keep appending last line read to buffer
+      stringBuffer.append(line);
+    }
+    return stringBuffer.toString();
+  }
+
+  private String exec(String cmd) throws IOException, InterruptedException {
+    Process exec = Runtime.getRuntime().exec(cmd);
     exec.waitFor();
     InputStream output = exec.getInputStream();
-    return new BufferedReader(new InputStreamReader(output)).readLine();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(output));
+    return readLines(reader);
+  }
+
+  private String calculateGitHash() throws IOException, InterruptedException {
+    return exec("git rev-parse HEAD");
+  }
+
+  private String calculateGitCommitMessage() throws IOException, InterruptedException {
+    return exec("echo \"`git log -1`\"");
   }
 
   public static void main(String[] args) throws FileNotFoundException {
