@@ -1,19 +1,21 @@
 package org.mule.jmh.report.influx;
 
 
-import com.mulesoft.weave.module.json.reader.JsonReader;
-import com.mulesoft.weave.module.reader.Reader;
-import com.mulesoft.weave.module.reader.SourceProvider$;
-import com.mulesoft.weave.module.reader.SourceReader$;
-import com.mulesoft.weave.parser.ast.variables.NameIdentifier;
-import com.mulesoft.weave.parser.exception.LocatableException;
-import com.mulesoft.weave.parser.phase.PhaseResult;
-import com.mulesoft.weave.runtime.CompilationResult;
-import com.mulesoft.weave.runtime.ExecutableWeave;
-import com.mulesoft.weave.runtime.WeaveCompiler;
-import com.mulesoft.weave.sdk.ParsingContextFactory;
-import com.mulesoft.weave.sdk.WeaveResource;
-import com.mulesoft.weave.sdk.WeaveResourceFactory;
+import org.mule.weave.v2.model.EvaluationContext$;
+import org.mule.weave.v2.module.json.reader.JsonReader;
+import org.mule.weave.v2.module.reader.Reader;
+import org.mule.weave.v2.module.reader.SourceProvider$;
+import org.mule.weave.v2.module.reader.SourceReader$;
+import org.mule.weave.v2.parser.ast.structure.DocumentNode;
+import org.mule.weave.v2.parser.ast.variables.NameIdentifier;
+import org.mule.weave.v2.parser.exception.LocatableException;
+import org.mule.weave.v2.parser.phase.PhaseResult;
+import org.mule.weave.v2.runtime.CompilationResult;
+import org.mule.weave.v2.runtime.ExecutableWeave;
+import org.mule.weave.v2.runtime.WeaveCompiler;
+import org.mule.weave.v2.sdk.ParsingContextFactory;
+import org.mule.weave.v2.sdk.WeaveResource;
+import org.mule.weave.v2.sdk.WeaveResourceFactory;
 import org.influxdb.InfluxDB;
 import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.BatchPoints;
@@ -59,9 +61,9 @@ public class InfluxReporter {
             .build();
 
     final WeaveResource weaveFile = WeaveResourceFactory.fromUrl(getClass().getClassLoader().getResource("report_processor.dwl"));
-    final PhaseResult<CompilationResult> compile = WeaveCompiler.compile(weaveFile, ParsingContextFactory.createMappingParsingContext(NameIdentifier.anonymous()));
+    final PhaseResult<CompilationResult<DocumentNode>> compile = WeaveCompiler.compile(weaveFile, ParsingContextFactory.createMappingParsingContext(NameIdentifier.anonymous()));
     final ExecutableWeave executable = compile.getResult().executable();
-    final Reader jsonReader = new JsonReader(SourceReader$.MODULE$.apply(SourceProvider$.MODULE$.apply(new File(jsonReport), Charset.forName("UTF-8"))));
+    final Reader jsonReader = new JsonReader(SourceReader$.MODULE$.apply(SourceProvider$.MODULE$.apply(new File(jsonReport), Charset.forName("UTF-8"))), EvaluationContext$.MODULE$.apply());
     final Map<String, Reader> payload = executable.write$default$2().$plus(Tuple2.apply("in0", jsonReader));
     try {
       String gitHash = calculateGitHash();
@@ -102,7 +104,7 @@ public class InfluxReporter {
   /**
    * Read until the end of the stream.
    */
-  private String readLines(BufferedReader reader) throws IOException, InterruptedException  {
+  private String readLines(BufferedReader reader) throws IOException, InterruptedException {
     // buffer for storing file contents in memory
     StringBuilder stringBuffer = new StringBuilder("");
     String line;
