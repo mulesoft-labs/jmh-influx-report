@@ -61,7 +61,7 @@ public class InfluxReporter {
             .build();
 
     final WeaveResource weaveFile = WeaveResourceFactory.fromUrl(getClass().getClassLoader().getResource("report_processor.dwl"));
-    final PhaseResult<CompilationResult<DocumentNode>> compile = WeaveCompiler.compile(weaveFile, ParsingContextFactory.createMappingParsingContext(NameIdentifier.anonymous()));
+    final PhaseResult<CompilationResult<DocumentNode>> compile = WeaveCompiler.compile(weaveFile, ParsingContextFactory.createParsingContext(NameIdentifier.anonymous()));
     final ExecutableWeave executable = compile.getResult().executable();
     final Reader jsonReader = new JsonReader(SourceReader$.MODULE$.apply(SourceProvider$.MODULE$.apply(new File(jsonReport), Charset.forName("UTF-8"))), EvaluationContext$.MODULE$.apply());
     final Map<String, Reader> payload = executable.write$default$2().$plus(Tuple2.apply("in0", jsonReader));

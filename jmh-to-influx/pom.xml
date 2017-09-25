@@ -23,4 +23,12 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>mule-snapshots</id>
+            <url>http://repository.mulesoft.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+
+    </repositories>
+
 </project>
