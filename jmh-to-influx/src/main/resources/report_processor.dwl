@@ -1,6 +1,6 @@
 %dw 2.0
-%input in0 application/json
-%output application/java
+input in0 application/json
+output application/java
 ---
 in0 map (result) -> {
   name: (result.benchmark splitBy ".")[-2],
