@@ -68,7 +68,7 @@ public class InfluxReporter {
     try {
       String gitHash = calculateGitHash();
       String commitMessage = calculateGitCommitMessage();
-      final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), executable.write$default$4());
+      final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), EvaluationContext$.MODULE$.apply());
       final List<JMHResult> results = (List<JMHResult>) result._1();
       for (JMHResult jmhResult : results) {
         Point.Builder builder = Point.measurement(jmhResult.getName()).time(System.currentTimeMillis(), TimeUnit.MILLISECONDS);
