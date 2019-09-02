@@ -1,4 +1,4 @@
-== JMH to Influx
+# JMH to Influx
 
 This tool parses the jmh json result and uploads it into influx.
 
