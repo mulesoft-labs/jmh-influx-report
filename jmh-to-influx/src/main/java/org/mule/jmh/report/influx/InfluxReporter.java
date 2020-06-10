@@ -5,24 +5,17 @@ import org.influxdb.InfluxDB;
 import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.BatchPoints;
 import org.influxdb.dto.Point;
-import org.mule.weave.v2.model.EvaluationContext$;
-import org.mule.weave.v2.module.json.reader.JsonReader;
-import org.mule.weave.v2.module.reader.Reader;
-import org.mule.weave.v2.module.reader.SourceProvider$;
-import org.mule.weave.v2.module.reader.SourceReader$;
-import org.mule.weave.v2.parser.ast.structure.DocumentNode;
 import org.mule.weave.v2.parser.ast.variables.NameIdentifier;
 import org.mule.weave.v2.parser.exception.LocatableException;
-import org.mule.weave.v2.parser.phase.PhaseResult;
-import org.mule.weave.v2.runtime.*;
+import org.mule.weave.v2.runtime.DataWeaveResult;
+import org.mule.weave.v2.runtime.DataWeaveScript;
+import org.mule.weave.v2.runtime.DataWeaveScriptingEngine;
+import org.mule.weave.v2.runtime.ScriptingBindings;
 import org.mule.weave.v2.sdk.ParsingContextFactory;
 import org.mule.weave.v2.sdk.WeaveResource;
 import org.mule.weave.v2.sdk.WeaveResourceFactory;
-import scala.Tuple2;
-import scala.collection.immutable.Map;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -55,7 +48,7 @@ public class InfluxReporter {
 
     final WeaveResource weaveFile = WeaveResourceFactory.fromUrl(getClass().getClassLoader().getResource("report_processor.dwl"));
     final DataWeaveScriptingEngine dataWeaveScriptingEngine = new DataWeaveScriptingEngine();
-    final DataWeaveScript compile = dataWeaveScriptingEngine.compile(weaveFile, ParsingContextFactory.createParsingContext(NameIdentifier.anonymous()));
+    final DataWeaveScript compile = dataWeaveScriptingEngine.compile(weaveFile.content(), "report_processor");
 
     try {
       String gitHash = calculateGitHash();
