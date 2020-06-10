@@ -1,6 +1,10 @@
 package org.mule.jmh.report.influx;
 
 
+import org.influxdb.InfluxDB;
+import org.influxdb.InfluxDBFactory;
+import org.influxdb.dto.BatchPoints;
+import org.influxdb.dto.Point;
 import org.mule.weave.v2.model.EvaluationContext$;
 import org.mule.weave.v2.module.json.reader.JsonReader;
 import org.mule.weave.v2.module.reader.Reader;
@@ -10,25 +14,14 @@ import org.mule.weave.v2.parser.ast.structure.DocumentNode;
 import org.mule.weave.v2.parser.ast.variables.NameIdentifier;
 import org.mule.weave.v2.parser.exception.LocatableException;
 import org.mule.weave.v2.parser.phase.PhaseResult;
-import org.mule.weave.v2.runtime.CompilationResult;
-import org.mule.weave.v2.runtime.ExecutableWeave;
-import org.mule.weave.v2.runtime.WeaveCompiler;
+import org.mule.weave.v2.runtime.*;
 import org.mule.weave.v2.sdk.ParsingContextFactory;
 import org.mule.weave.v2.sdk.WeaveResource;
 import org.mule.weave.v2.sdk.WeaveResourceFactory;
-import org.influxdb.InfluxDB;
-import org.influxdb.InfluxDBFactory;
-import org.influxdb.dto.BatchPoints;
-import org.influxdb.dto.Point;
 import scala.Tuple2;
 import scala.collection.immutable.Map;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
@@ -61,15 +54,14 @@ public class InfluxReporter {
             .build();
 
     final WeaveResource weaveFile = WeaveResourceFactory.fromUrl(getClass().getClassLoader().getResource("report_processor.dwl"));
-    final PhaseResult<CompilationResult<DocumentNode>> compile = WeaveCompiler.compile(weaveFile, ParsingContextFactory.createParsingContext(NameIdentifier.anonymous()));
-    final ExecutableWeave executable = compile.getResult().executable();
-    final Reader jsonReader = new JsonReader(SourceReader$.MODULE$.apply(SourceProvider$.MODULE$.apply(new File(jsonReport), Charset.forName("UTF-8"))), EvaluationContext$.MODULE$.apply());
-    final Map<String, Reader> payload = executable.write$default$2().$plus(Tuple2.apply("in0", jsonReader));
+    final DataWeaveScriptingEngine dataWeaveScriptingEngine = new DataWeaveScriptingEngine();
+    final DataWeaveScript compile = dataWeaveScriptingEngine.compile(weaveFile, ParsingContextFactory.createParsingContext(NameIdentifier.anonymous()));
+
     try {
       String gitHash = calculateGitHash();
       String commitMessage = calculateGitCommitMessage();
-      final Tuple2<Object, Charset> result = executable.write(executable.write$default$1(), payload, executable.write$default$3(), EvaluationContext$.MODULE$.apply());
-      final List<JMHResult> results = (List<JMHResult>) result._1();
+      final DataWeaveResult result = compile.write(new ScriptingBindings().addBinding("in0", new File(jsonReport), "application/json"));
+      final List<JMHResult> results = (List<JMHResult>) result.getContent();
       for (JMHResult jmhResult : results) {
         Point.Builder builder = Point.measurement(jmhResult.getName()).time(System.currentTimeMillis(), TimeUnit.MILLISECONDS);
         Set<java.util.Map.Entry<String, Object>> fields = jmhResult.getMeassures().entrySet();

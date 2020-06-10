@@ -8,7 +8,7 @@ import org.mule.jmh.report.influx.InfluxReporter
 class JmhExtensionsPlugin implements Plugin<Project> {
     void apply(Project project) {
         project.extensions.create('influxReport', InfluxReportExtension)
-        def task = project.task('generateJmhInfluxReport') << {
+        def task = project.task('generateJmhInfluxReport').doFirst{
             InfluxReportExtension configuration = project.influxReport
             configuration.dbName = configuration.dbName ?: project.name + "_db"
             project.logger.info 'Using this configuration:\n{}', configuration
